@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruffle SWF Player</title>
+</head>
+<body>
+    <h1>SWF Game Player</h1>
+    <div id="game-container" style="width: 800px; height: 600px;">
+        <!-- Ruffle will replace this div with the SWF player -->
+    </div>
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+    <script>
+        window.addEventListener("load", (event) => {
+            const ruffle = window.RufflePlayer.newest();
+            const player = ruffle.createPlayer();
+            const container = document.getElementById("game-container");
+            container.appendChild(player);
+            player.load("coffeeshopgame.swf"); // Replace with your SWF file path
+        });
+    </script>
+</body>
+</html>
